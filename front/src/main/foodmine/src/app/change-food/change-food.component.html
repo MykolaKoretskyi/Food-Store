@@ -1,0 +1,68 @@
+<div class="box">
+
+  <div class="checkout">
+
+    <h3 class="h3">Change Food</h3>
+
+    <label class="description-input">Food name:</label>
+    <input type="text" class="form-control" placeholder="Enter food name" [(ngModel)]="foodName"
+           required>
+
+    <label class="description-input">Food description:</label>
+    <input type="text" class="form-control" placeholder="Enter food description"
+           [(ngModel)]="foodDescription" required>
+
+    <label class="description-input">Food price:</label>
+    <input type="text" class="form-control" placeholder="Enter food price" [(ngModel)]="foodPrice"
+           required>
+
+    <label class="description-input">Food cook time:</label>
+    <input type="text" class="form-control"
+           placeholder="Enter the cooking time in the format: 00-00 (minutes)"
+           [(ngModel)]="foodCookTime" required>
+
+    <div class="file-upload">
+      <label class="description-input">Food image Url:</label>
+
+      <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+      <button mat-mini-fab color="primary" class="upload-button"
+              (click)="fileUpload.click()">
+        <p class="description-upload">
+          {{fileName || "No file"}}
+        </p>
+      </button>
+
+    </div>
+
+    <label class="description-input">Food origins names:</label>
+    <div class="checkbox-container">
+
+      <ul class="checkbox-list" *ngFor="let item of allOrigins">
+        <input class="checkbox" type="checkbox" name="checkItem"
+               (change)="changeOriginsValue($event, item)" [checked]=selectedOrigins.includes(item)>
+        <li class="checkbox-description">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+
+
+    <label class="description-input">Food tags names:</label>
+    <div class="checkbox-container">
+
+      <ul class="checkbox-list" *ngFor="let item of allTags">
+        <input class="checkbox" type="checkbox" name="checkItem"
+               (change)="changeTagsValue($event, item)" [checked]=selectedTags.includes(item)>
+        <li class="checkbox-description">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="buttons">
+      <button class="order-button" type="button" (click)="confirm()">Confirm</button>
+      <button class="cancel" type="submit" routerLink="/manager-page"> Cancel</button>
+    </div>
+
+  </div>
+</div>

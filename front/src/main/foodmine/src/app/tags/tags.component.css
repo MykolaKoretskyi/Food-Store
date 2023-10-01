@@ -1,0 +1,55 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: rgba(255, 255, 255, 0.5);
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.tag-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-link{
+  background: rgba(80, 55, 0, 0.1);
+  padding: .3rem 1rem;
+  margin: .2rem .15rem;
+  border-radius: 10rem;
+  border: 1px inset var(--color-border);
+  box-shadow: 1px 1px 3px var(--color-cancelbutton);
+  font-weight: 600;
+  color: var(--color-link);
+}
+
+.tag-link:hover {
+  background-color: var(--color-brand);
+  color: var(--color-background);
+
+}
+
+.active{
+  background-color:  var(--color-brand);
+  color: var(--color-background);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .tag-link{
+    padding: .1rem .5rem;
+    margin: .2rem .15rem;
+    font-size: .7rem;
+    font-weight: 600;
+  }
+
+  .tag-box{
+    max-width: 100vw;
+  }
+
+}

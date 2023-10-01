@@ -1,0 +1,232 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: whitesmoke;
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+  margin: 1rem;
+  /*width: 200rem;*/
+  border: 1px inset var(--color-border);
+  border-radius: 1rem;
+  background-image: url('/assets/images/bacground/bacground3.jpg');
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+
+.cont > *{
+  min-width: 25rem;
+  max-width: 40rem;
+}
+.cont {
+  padding: 3% 1% 3% 1%;
+}
+@media (max-width: 768px) {
+  .cont > *{
+    min-width: 25vw;
+    max-width: 93vw;
+    height: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cont{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    margin: 0;
+    max-width: 96vw;
+  }
+
+  .img-container {
+    width: 96vw;
+    margin: 0;
+  }
+
+  .img-container .img-food {
+    margin: 0;
+   max-width: 93vw;
+    max-height: 93vw;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+
+  .cont .details{
+    width: 93vw;
+    border-radius: 2rem;
+    padding: 2vw;
+    margin: 0;
+  }
+
+  .header .favorite{
+    margin: 3vw;
+  }
+}
+
+.details{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  border-radius: 3rem;
+  border: 1px inset var(--color-border);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  background: rgba(80, 55, 0, 0.1);
+  padding: 2rem;
+  color: var(--color-text);
+  margin-left: 1rem;
+}
+
+
+.details .header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.details .header .name{
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+
+}
+
+.details .favorite .favorite-link{
+  color: var(--color-brand);
+  font-size: 3rem;
+}
+
+.details .favorite .favorite-link.not{
+  color: var(--color-cancelbutton);
+}
+
+.details .favorite .favorite-link:hover{
+  opacity: .9;
+  cursor: pointer;
+}
+
+.details .origins{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.span-origins{
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+.details .origins > span{
+  padding: .5rem;
+  font-size: 1.2rem;
+  margin: .5rem .5rem .5rem 0;
+  border-radius: 2rem;
+  background-color: var(--color-input);
+  border: 1px inset var(--color-border);
+}
+
+.details .cook-time{
+  margin-top: 1rem;
+}
+
+.details .cook-time span{
+  padding: .6rem 2rem .6rem 0;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+}
+
+.details .price{
+  font-size: 1.8rem;
+  margin: 2rem 2rem 2rem 0;
+  color: var(--color-price);
+  font-weight: 500;
+}
+
+.details .price::before{
+  content: "Price: ";
+  color: var(--color-text);
+}
+
+
+.details button{
+  color: var(--color-background);
+  background: var(--color-brand);
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+.details button:hover{
+  opacity: .9;
+  cursor: pointer;
+}
+
+
+.rating {
+  margin-bottom: 10px;
+}
+
+
+.defaultHeart {
+  position: relative;
+  display: inline-block;
+  color: var(--color-cancelbutton);
+  font-size: 2rem;
+  line-height: 1;
+ }
+
+.defaultHeart .paintedHeart {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: var(--color-brand);
+ }
+
+.description-text {
+  color: var(--color-text);
+  font-size: 1.2rem;
+}
+
+.img-container {
+  width: 35rem;
+  height: 35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-food {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 3rem;
+  box-shadow: 3px 3px 5px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.details .button{
+  box-shadow: 3px 3px 5px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}

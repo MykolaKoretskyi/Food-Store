@@ -1,0 +1,58 @@
+<app-not-found [visible]="(!cart || cart.getItems().length <= 0) && isLoggedIn"
+               notFoundMessage="Cart Page Is Empty!"
+               resetLinkText="Go To Homepage">
+</app-not-found>
+
+<div class="cont" *ngIf="cart && cart.getItems().length > 0">
+
+  <ul>
+    <li class="list-items" *ngFor="let cartItem of cart.getItems()">
+      <div>
+        <img class="image" [src]="cartItem.food.imageUrl.url" [alt]="cartItem.food.name">
+      </div>
+
+      <div>
+        <a class="link" (click)="goToFoodPage(cartItem.food.id)">
+          {{cartItem.food.name}}
+        </a>
+      </div>
+
+      <div class="container-input">
+
+        <div *ngIf="!isManager">
+          <button class="button-input" (click)="decrement(cartItem)">-</button>
+          <input class="input" [(ngModel)]="cartItem.quantity" #quantitySelect
+                 (keyup)="changeQuantity(cartItem, quantitySelect.value)">
+          <button class="button-input" (click)="increment(cartItem)">+</button>
+        </div>
+        <li class="quantity-for-manager" *ngIf="isManager">{{cartItem.quantity}}</li>
+
+      </div>
+
+      <div class="price">
+        {{cartItem.getPrice() | currency}}
+      </div>
+
+      <div>
+        <button class="remove-button" *ngIf="!isManager" (click)="removeFromCart(cartItem)">
+          Remove
+        </button>
+      </div>
+
+    </li>
+  </ul>
+
+  <div class="checkout">
+    <div>
+      <div class="foods-count">{{cart.getItems().length}}</div>
+      <div class="total-price">{{cart.totalPrice | currency}}</div>
+      <div>
+        <button class="order-button" *ngIf="!isManager" (click)="orderSelected()">
+          Order selected
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,87 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: whitesmoke;
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.info-dialog {
+  background-image: url('/assets/images/bacground/bacground3.jpg');
+  margin: 0;
+  height: 100%;
+  padding: 1rem;
+}
+
+.box {
+  padding: 0 2rem .6rem 2rem;
+  border: 1px inset var(--color-border);
+  border-radius: 1rem;
+  background: rgba(80, 55, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+@media (max-width: 768px) {
+  .info-dialog {
+    margin: 0;
+    height: 128vh;
+    padding: 5vw 3vw 3vw 3vw;
+  }
+
+  .box {
+    margin: 0;
+    padding: 5vw 3vw 3vw 3vw;
+  }
+}
+
+.h3{
+  justify-content: center;
+  color: var(--color-brand);
+  font-weight: 500;
+  font-size: large;
+  margin: 1rem 0 .2rem 0;
+}
+
+.paragraph{
+  font-weight: 500;
+}
+
+.list-item {
+  list-style-type: none;
+}
+
+.item {
+  font-weight: 600;
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cancel{
+  margin-top: 1rem;
+  display: block;
+  height: 2rem;
+  width: 8rem;
+  font-size: 1rem;
+  border-radius: 3rem 3rem 3rem 3rem;
+  background-color: var(--color-cancelbutton);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.cancel:hover{
+  opacity: 1;
+  cursor: pointer;
+}

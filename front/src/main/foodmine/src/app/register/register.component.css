@@ -1,0 +1,163 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: whitesmoke;
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+
+
+.register-dialog {
+  background-image: url('/assets/images/bacground/bacground3.jpg');
+  background-size: cover;
+  margin: 0;
+  height: 30rem;
+  padding: 2rem;
+}
+
+.box-register {
+  margin: 0;
+  padding: 1rem 1rem 1rem 1rem;
+  border: 1px inset var(--color-border);
+  border-radius: .5rem;
+  background: rgba(80, 55, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+@media (max-width: 768px) {
+  .register-dialog {
+    /*margin: 0;*/
+
+
+    padding: 10vw 5vw 5vw 5vw;
+  }
+
+  .box-register {
+    margin: 0;
+    padding: 6vw 3vw 3vw 3vw;
+  }
+
+}
+
+.label {
+  margin-left: 1rem;
+  color: var(--color-inputdescription);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.h3 {
+  justify-content: center;
+  color: var(--color-brand);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form-input {
+  border-radius: 3rem 3rem 3rem 3rem;
+  height: 2rem;
+  padding: 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  margin: .1rem .5rem 1rem .5rem;
+  width: 90%;
+  border: 1px inset var(--color-border);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.form-input:focus {
+  background-color: white;
+}
+
+.form-input::placeholder {
+  color: var(--color-cancelbutton);
+}
+
+.register-button {
+  margin: 1rem 0 1rem 0;
+  height: 2rem;
+  width: 6rem;
+  font-size: 1rem;
+  border-radius: 3rem 3rem 3rem 3rem;
+  background-color: var(--color-brand);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.register-button:disabled {
+  background-color: var(--color-border);
+  cursor: not-allowed;
+}
+
+.checkbox:not(:checked) + .register-button {
+  background-color: var(--color-brand);
+}
+
+.cancel-button {
+  margin: 1rem 0 1rem 0;
+  height: 2rem;
+  width: 6rem;
+  font-size: 1rem;
+  border-radius: 3rem 3rem 3rem 3rem;
+  background-color: var(--color-cancelbutton);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.cancel-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.display-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.checkbox {
+  height: 1.4rem;
+  width: 1.4rem;
+  margin: 0 .3rem .2rem 0;
+  box-shadow: 1px 1px 3px var(--color-cancelbutton);
+  accent-color: var(--color-price);
+}
+
+.checkbox:hover {
+  cursor: pointer;
+}
+
+.checkbox-description {
+  margin-left: .3rem;
+  font-weight: 500;
+  color: var(--color-inputdescription);
+}
+
+.checkbox-container {
+  display: flex;
+  list-style-type: none;
+  align-items: flex-start;
+  padding: 0;
+  margin-left: .5rem;
+}
+

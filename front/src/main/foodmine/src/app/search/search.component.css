@@ -1,0 +1,70 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: rgba(255, 255, 255, 0.5);
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.search-field {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+ .search-input {
+   border-radius: 10rem 0 0 10rem;
+   border: 1px inset var(--color-border);
+   box-shadow: 1px 1px 3px var(--color-cancelbutton);
+   height: 2.5rem;
+   width: 15vw;
+   background-color: var(--color-input);
+   padding: 1.2rem;
+   font-size: 1rem;
+   font-weight: 500;
+   outline: none;
+ }
+
+.search-input:focus {
+  background-color: white;
+}
+
+.search-button {
+  height: 2.5rem;
+  width: 5rem;
+  font-size: 1rem;
+  border-radius: 0 10rem 10rem 0;
+  border: 1px inset var(--color-border);
+  box-shadow: 1px 1px 3px var(--color-cancelbutton);
+  background-color: var(--color-brand);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+}
+
+div button:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    height: 12vw;
+    width: 60vw;
+    padding: .2rem;
+    font-size: 5vw;
+  }
+  .search-button {
+    height: 12vw;
+    width: 20vw;
+    padding: .2rem;
+    font-size: 5vw;
+   }
+
+}

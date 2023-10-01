@@ -1,0 +1,46 @@
+:host {
+  --color-red: red;
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: whitesmoke;
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.box {
+  text-align: center;
+}
+
+.contain {
+  text-align: left;
+  display: inline-block;
+  margin: 1rem;
+  width: 80rem;
+  border: 1px inset var(--color-border);
+  border-radius: 1rem;
+  background-image: url('/assets/images/bacground/bacground3.jpg');
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+@media (max-width: 1000px) {
+  .contain {
+    margin: 1rem;
+    width: 95%;
+    padding: 1%;
+  }
+}
+
+
+/*@media (max-width: 768px) {*/
+/*  .contain {*/
+/*    margin: 1rem;*/
+/*    width: 95%;*/
+/*    padding: 1%;*/
+/*  }*/
+/*}*/

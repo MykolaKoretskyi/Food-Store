@@ -1,0 +1,101 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: whitesmoke;
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.container-orders {
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1%;
+  box-sizing: border-box;
+  border: 1px inset var(--color-border);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  background: rgba(80, 55, 0, 0.1);
+  overflow-x: auto; /* Горизонтальна прокрутка при потребі */
+  max-width: 99%; /* Максимальна ширина контейнера для реакції на розмір екрану */
+}
+
+.caption-table {
+  color: var(--color-brand);
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+mat-table {
+  background-color:var(--color-input);
+  border-bottom: .7px solid currentColor;
+  margin-bottom: 1%;
+  flex-grow: 1;
+}
+
+.mdc-data-table__header-cell {
+  border-top: .7px solid currentColor;
+  border-bottom: .7px solid currentColor;
+  justify-content: center;
+  }
+
+.custom-header {
+  padding: 1%;
+}
+
+.custom-cell {
+  padding: 1%;
+}
+
+.mat-column-id,
+.mat-column-itemsFood,
+.mat-column-totalPrice,
+.mat-column-deliveryAddress,
+.mat-column-phoneNumber,
+.mat-column-status,
+.mat-column-orderDate,
+.mat-column-timeOfCompleted
+{
+  border-right: .7px solid currentColor;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.mat-column-id{
+  flex-grow: .1;
+  border-left: .7px solid currentColor;
+}
+
+.mat-column-itemsFood{
+  flex-grow: 2;
+}
+
+.mat-column-totalPrice{
+  flex-grow: .4;
+}
+
+.mat-column-deliveryAddress{
+  flex-grow: .4;
+}
+
+.mat-column-phoneNumber{
+  flex-grow: 1.2;
+}
+
+.mat-column-status{
+  flex-grow: 1.5;
+}
+
+.mat-column-orderDate{
+  flex-grow: 1.5;
+}
+
+.mat-column-timeOfCompleted{
+  flex-grow: 1.5;
+}

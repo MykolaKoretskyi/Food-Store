@@ -1,0 +1,75 @@
+<div class="box">
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!foods || foods.length <= 0"
+resetLinkText="Reset Search" (click)="goToFoodMine()"></app-not-found>
+
+<ul>
+  <li class="card-food" *ngFor="let food of foods">
+
+      <a (click)="goToFoodPage(food.id)">
+       <div class="img-container">
+         <img class="img-food" src="{{food.imageUrl.url}}" alt="{{food.name}}">
+       </div>
+
+      <div class="content">
+        <div class="name">
+          {{food.name}}
+        </div>
+        <div class="stars">
+          <ngb-rating
+            [max]="5"
+            [(rate)]="food.stars"
+            [readonly]="true">
+            <ng-template let-fill="fill">
+              <span class="defaultHeart" [class.filled]="fill === 100">
+                <span class="paintedHeart" [style.width.%]="fill">❤</span>❤
+              </span>
+            </ng-template>
+          </ngb-rating>
+        </div>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span class="span-origins" *ngFor="let origin of food.origins">
+              {{origin.name}}
+            </span>
+          </div>
+          <div class="cook-time">
+            <span>🕒</span>
+            {{food.cookTime}}
+          </div>
+        </div>
+        <div class="price">
+          <span>
+            {{food.price|currency}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<nav aria-label="...">
+  <ul class="pagination">
+
+    <li class="page-item">
+      <a class="link-previous" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo; Previous</span>
+      </a>
+    </li>
+
+    <li class="page-item" *ngFor="let p of pages; let i=index">
+      <a class="page-link" href="#" (click)="setPage(i,$event)" [ngClass]="{'active':i==pageNumber}">{{i+1}}</a>
+    </li>
+
+    <li class="page-item">
+      <a class="link-next" href="#" aria-label="Next">
+        <span aria-hidden="true">Next &raquo;</span>
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
+</div>
+

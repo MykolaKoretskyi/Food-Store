@@ -1,0 +1,35 @@
+<div class="register-dialog">
+  <form [formGroup]="registerForm">
+
+    <div class="box-register">
+
+      <h3 class="h3">Register</h3>
+
+      <label class="label">{{'Username'}}</label>
+      <input type="text" class="form-input" formControlName="username"
+             placeholder="{{'Enter Username'}}" required>
+
+      <label class="label">{{'Email'}}</label>
+      <input type="email" class="form-input" formControlName="email"
+             placeholder="{{'Enter Email'}}" required>
+
+      <label class="label">{{'Password'}}</label>
+      <input type="password" class="form-input" formControlName="password"
+             placeholder="{{'Enter Password'}}" required>
+
+      <ul class="checkbox-container">
+        <input class="checkbox" type="checkbox" name="subscribe">
+        <li class="checkbox-description">I agree to the processing of my data</li>
+      </ul>
+
+    </div>
+
+    <div class="display-flex">
+      <button type="submit" class="register-button" name="submit" mat-dialog-close (click)="checkAndRegister()"
+              disabled>Register
+      </button>
+      <button type="submit" class="cancel-button" mat-dialog-close>Cancel</button>
+    </div>
+
+  </form>
+</div>

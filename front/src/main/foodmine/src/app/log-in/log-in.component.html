@@ -1,0 +1,25 @@
+<div class="login-dialog">
+<form [formGroup]="loginForm">
+
+
+  <div class="box-login">
+    <h3 class="h3">Log In</h3>
+
+    <label class="label">{{'Username'}}</label>
+    <input type="text" class="form-input" formControlName="username"
+           placeholder="{{'Enter Username'}}" required>
+
+    <label class="label" >{{'Password'}}</label>
+    <input type="password" class="form-input" formControlName="password"
+           placeholder="{{'Enter Password'}}" required>
+
+  </div>
+  <div class="display-flex">
+    <button type="submit" class="login-button" (click)="checkAndLogIn()"> Login </button>
+
+    <button type="submit" class="cancel-button" mat-dialog-close > Cancel </button>
+  </div>
+</form>
+
+
+</div>

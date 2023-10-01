@@ -1,0 +1,64 @@
+<app-not-found [visible]="!food && !isStatusForbidden" notFoundMessage="Product Not Found!"
+               resetLinkText="Go To Homepage"></app-not-found>
+<app-not-found [visible]="isStatusForbidden" notFoundMessage="You are not authorized"
+               resetLinkText="Go To Home Page"></app-not-found>
+
+<div class="box">
+  <div *ngIf="food" class="cont">
+
+    <div class="img-container">
+      <img class="img-food" [src]="food.imageUrl.url" [alt]="food.name"/>
+    </div>
+    <div class="details">
+
+      <div class="header">
+        <span class="name">{{food.name}}</span>
+        <span class="favorite">
+        <a *ngIf="!isManager" class="favorite-link {{food.favorite?'':'not'}}"
+           (click)="changeFavoriteStatus()">
+          ❤
+        </a>
+      </span>
+      </div>
+
+      <div class="rating">
+        <ngb-rating
+          [max]="5"
+          [(rate)]="food.stars"
+          [readonly]="true">
+          <ng-template let-fill="fill">
+              <span class="defaultHeart" [class.filled]="fill === 100">
+                  <span class="paintedHeart" [style.width.%]="fill">❤</span>❤
+              </span>
+          </ng-template>
+        </ngb-rating>
+      </div>
+
+      <div class="origins">
+      <span class="span-origins" *ngFor="let origin of food.origins">
+        {{origin.name}}
+      </span>
+      </div>
+
+      <div class="description">
+        <p class="description-text">
+          {{food.description}}
+        </p>
+      </div>
+
+      <div class="cook-time">
+     <span>
+        Time to cook about <strong>{{food.cookTime}}</strong> minutes
+      </span>
+      </div>
+
+      <div class="price">
+        <span>{{food.price|currency}}</span>
+      </div>
+
+      <button class="button" *ngIf="!isManager" (click)="addToCart()">Add To Cart</button>
+
+    </div>
+
+  </div>
+</div>

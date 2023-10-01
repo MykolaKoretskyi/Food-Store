@@ -1,0 +1,30 @@
+<div class="box">
+  <div class="box-container">
+    <app-not-found [visible]="isStatusForbidden" notFoundMessage="You are not authorized"
+                   resetLinkText="Go To Home Page"></app-not-found>
+
+    <div class="cont" *ngIf="!isStatusForbidden && isManager">
+      <div class="element-button">
+        <button class="button" type="submit" routerLink="/add-food">Add New Food</button>
+      </div>
+
+      <div class="element-input-button">
+        <input class="input" type="text" placeholder="Enter the full name of the food:"
+               [(ngModel)]="foodNameForChange">
+        <button class="button-input" type="submit" (click)="changeFoodByName()">Change Food By Name
+        </button>
+      </div>
+
+      <div class="element-input-button">
+        <input class="input" type="text" placeholder="Enter the full name of the food:"
+               [(ngModel)]="foodNameForDelete">
+        <button class="button-input" type="submit" (click)="deleteFoodByName()">Delete Food By Name
+        </button>
+      </div>
+
+    </div>
+
+    <app-orders-table *ngIf="!isStatusForbidden && isManager"></app-orders-table>
+
+  </div>
+</div>

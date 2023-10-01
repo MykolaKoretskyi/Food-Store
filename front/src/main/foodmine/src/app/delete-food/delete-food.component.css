@@ -1,0 +1,120 @@
+:host {
+  --color-red: red;
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: whitesmoke;
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.box {
+  text-align: center;
+}
+
+.checkout {
+  /*text-align: left;*/
+  display: inline-block;
+  margin: 1rem;
+  width: 80rem;
+  border: 1px inset var(--color-border);
+  border-radius: 1rem;
+  background-image: url('/assets/images/bacground/bacground3.jpg');
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+@media (max-width: 1000px) {
+  .box .checkout {
+    margin: 5% 1% 4% 1%;
+    padding: 2%;
+    width: 96vw;
+  }
+  .checkout .checkbox-container {
+    width: 90vw;
+    padding: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+  .checkout .upload-button {
+    margin: 2%;
+    width: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout .checkbox-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .checkout .checkbox-list {
+    margin: 2%;
+  }
+  .checkout .upload-button {
+    width: 50vw;
+  }
+}
+
+.description{
+  text-align: center;
+  line-height: 1.2;
+  color: var(--color-red);
+  margin: 5% 2% 5% 2%;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/*.details{*/
+/*  text-align: left;*/
+/*}*/
+
+.buttons .delete{
+  border-radius: 2rem;
+  font-size: 1rem;
+  padding: .6rem 2rem .6rem 2rem;
+  margin: 1rem;
+  background-color: var(--color-brand);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.buttons .delete:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.buttons .cancel{
+  margin: 1rem;
+  padding: .6rem 2rem .6rem 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  background-color: var(--color-cancelbutton);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.buttons .cancel:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.buttons{
+  text-align: center;
+}
+
+.food-page>.container{
+  border: none;
+  background-image: none;
+  box-shadow: none;
+}

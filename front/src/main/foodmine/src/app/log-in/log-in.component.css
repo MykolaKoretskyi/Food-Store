@@ -1,0 +1,121 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: whitesmoke;
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.login-dialog {
+  background-image: url('/assets/images/bacground/bacground3.jpg');
+  margin: 0;
+  height: 100%;
+  padding: 2rem;
+}
+
+.box-login {
+  margin: 0;
+  padding: 1rem 1rem 1rem 1rem;
+  border: 1px inset var(--color-border);
+  border-radius: .5rem;
+  background: rgba(80, 55, 0, 0.1);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+@media (max-width: 768px) {
+  .login-dialog {
+    margin: 0;
+    height: 100%;
+    padding: 10vw 5vw 5vw 5vw;
+  }
+
+  .box-login {
+    margin: 0;
+    padding: 6vw 3vw 3vw 3vw;
+  }
+}
+
+.h3 {
+  justify-content: center;
+  color: var(--color-brand);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.label {
+  margin-left: 1rem;
+  color: var(--color-inputdescription);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form-input {
+  border-radius: 3rem 3rem 3rem 3rem;
+  height: 2rem;
+  padding: 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  margin: .1rem .5rem 1rem .5rem;
+  width: 90%;
+  border: 1px inset var(--color-border);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.form-input::placeholder {
+  color: var(--color-cancelbutton);
+}
+
+.form-input:focus {
+  background-color: white;
+}
+
+.login-button {
+  margin: 1rem 0 1rem 0;
+  height: 2rem;
+  width: 6rem;
+  font-size: 1rem;
+  border-radius: 3rem 3rem 3rem 3rem;
+  background-color: var(--color-brand);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.login-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.cancel-button {
+  margin: 1rem 0 1rem 0;
+  height: 2rem;
+  width: 6rem;
+  font-size: 1rem;
+  border-radius: 3rem 3rem 3rem 3rem;
+  background-color: var(--color-cancelbutton);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.cancel-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.display-flex {
+  display: flex;
+  justify-content: space-around;
+}

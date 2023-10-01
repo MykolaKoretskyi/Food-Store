@@ -1,0 +1,51 @@
+<div class="order-dialog">
+  <div class="box">
+    <div class="container">
+      <ul class="food" *ngFor="let cartItem of cart.getItems()">
+        <li class="item">
+          {{cartItem.food.name}}
+        </li>
+        <li>
+          {{cartItem.quantity}}
+        </li>
+        <li>
+          {{cartItem.getPrice() | currency}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="price">
+      <ul class="description">
+        <li class="total-price">{{cart.totalPrice | currency}}</li>
+        <li class="message-contacts">Leave your contact details and our manager will contact you:
+        </li>
+      </ul>
+    </div>
+
+    <div class="checkout">
+
+      <form *ngIf="cart" [formGroup]="orderForm">
+
+        <label class="description-input">Your full name</label>
+        <input type="text" class="form-control" formControlName="fullName"
+               placeholder="Enter your full name" required>
+
+        <label class="description-input">Delivery address</label>
+        <input type="text" class="form-control" formControlName="deliveryAddress"
+               placeholder="Enter the delivery address in the format: town, street, house, apartment"
+               required>
+
+        <label class="description-input">Your phone number</label>
+        <input type="text" class="form-control" formControlName="phoneNumber"
+               placeholder="Enter your phone number in the format: (050)1234567" required>
+
+        <div class="buttons">
+          <button class="order-button" type="button" (click)="confirm(cart)">Confirm</button>
+          <button class="cancel" type="submit" mat-dialog-close> Cancel</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>

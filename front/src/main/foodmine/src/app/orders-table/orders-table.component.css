@@ -1,0 +1,151 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input: rgba(255, 255, 255, 0.6);
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.box {
+  display: inline-block;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: .5rem;
+  border: 1px inset var(--color-border);
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  background: rgba(80, 55, 0, 0.1);
+  width: 80vw;
+}
+
+@media (max-width: 1000px) {
+  .box {
+    margin: 0;
+    padding: 1%;
+    width: 98%;
+    max-width: 99%;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    margin: 1%;
+    max-width: 100%;
+  }
+}
+
+.caption-table {
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.table {
+  border-bottom: .7px solid currentColor;
+}
+
+.multiline-cell {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.username,
+.fullName {
+  white-space: nowrap;
+  overflow: hidden; /* Ховаємо зайвий текст, якщо він не поміщається */
+  text-overflow: ellipsis; /* Додаємо мініатюрний знак для показу обрізаного тексту */
+  margin: 0; /* Встановлюємо нульовий відступ для більш точного контролю над текстом */
+}
+
+
+.custom-header,
+.custom-cell,
+.custom-select {
+  padding: 1%;
+}
+
+
+.mat-column-id,
+.mat-column-username,
+.mat-column-itemsFood,
+.mat-column-totalPrice,
+.mat-column-deliveryAddress,
+.mat-column-phoneNumber,
+.mat-column-status,
+.mat-column-orderDate,
+.mat-column-managerName,
+.mat-column-timeByManager,
+.mat-column-timeOfCompleted {
+  flex: none;
+  width: 3%;
+  border-right: .7px solid currentColor;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.caption-table {
+  color: var(--color-text);
+  white-space: nowrap;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.link {
+  color: var(--color-link);
+}
+
+.link:hover, .link:focus {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.mat-column-id {
+  flex-grow: .1;
+}
+
+.mat-column-username {
+  flex-grow: .5;
+}
+
+.mat-column-itemsFood {
+  flex-grow: .8;
+}
+
+.mat-column-totalPrice {
+  flex-grow: .2;
+}
+
+.mat-column-deliveryAddress {
+  flex-grow: .4;
+}
+
+.mat-column-phoneNumber {
+  flex-grow: .7;
+}
+
+.mat-column-status {
+  flex-grow: 1.1;
+}
+
+.mat-column-orderDate {
+  flex-grow: .8;
+}
+
+.mat-column-managerName {
+  flex-grow: 1;
+}
+
+.mat-column-timeByManager {
+  flex-grow: .8;
+}
+
+.mat-column-timeOfCompleted {
+  flex-grow: .8;
+}

@@ -1,0 +1,184 @@
+:host {
+  --color-brand: #e72929;
+  --color-border: #ffbbbb;
+  --color-background: white;
+  --color-input:  rgba(255, 255, 255, 0.6);
+  --color-bordergray: #e4e4e4;
+  --color-inputtext: darkgray;
+  --color-cancelbutton: gray;
+  --color-inputdescription: dimgrey;
+  --color-link: blue;
+  --color-price: green;
+  --color-text: black;
+}
+
+.box {
+  text-align: center;
+  max-width: 100vw;
+}
+
+.box-container{
+  display: inline-block;
+  margin: 2%;
+  width: 84%;
+  border: 1px inset var(--color-border);
+  border-radius: 1rem;
+  background-image: url('/assets/images/bacground/bacground3.jpg');
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+}
+
+
+@media (max-width: 1000px) {
+  .box-container{
+    margin: 4vw 1vw 4vw 1vw;
+    width: 98%;
+    max-width: 99vw;
+  }
+
+  .box-container .cont{
+    padding: 0;
+  }
+
+  .cont .element-button {
+    margin: 1%;
+    padding: 0;
+    width: 15vw;
+  }
+
+  .cont .element-input-button{
+    margin: 1%;
+    width: 40vw;
+    display: flex;
+    padding: 0;
+  }
+
+  .element-button .button {
+    height: 100%;
+    width: 100%;
+    font-size: 95%;
+    padding: 0 5% 0 5%;
+  }
+
+  .element-input-button .input {
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    font-size: 95%;
+  }
+
+  .element-input-button .button-input {
+    height: 100%;
+    width: 80%;
+    padding: 2%;
+    font-size: 95%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .box-container{
+    margin: 4vw 1vw 4vw 1vw;
+    width: 96vw;
+    max-width: 99vw;
+  }
+  .cont {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cont .element-button {
+    margin: 4% 0 3% 0;
+    width: 85vw;
+  }
+
+  .cont .element-input-button{
+    margin: 2% 0 3% 0;
+    width: 85vw;
+  }
+
+  .element-button .button {
+    width: 100%;
+    font-size: 100%;
+    padding: 1% 5% 1% 5%;
+  }
+
+  .element-input-button .input {
+    width: 100%;
+    padding: 1.2%;
+    font-size: 100%;
+  }
+
+  .element-input-button .button-input {
+    width: 85%;
+    padding: 1%;
+    font-size: 100%;
+  }
+
+}
+
+.cont {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4% 0 4%;
+}
+
+.button {
+  height: 3rem;
+  width: 10rem;
+  font-size: 1rem;
+  border-radius: 10rem;
+  background-color: var(--color-brand);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.element-button .element-input-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  border-radius: 10rem 0 0 10rem;
+  height: 3rem;
+  width: 20rem;
+  background-color: var(--color-input);
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: 1px inset var(--color-border);
+  box-shadow: 1px 1px 3px var(--color-cancelbutton);
+}
+
+.input:focus {
+  background-color: white;
+}
+
+.button-input {
+  height: 3rem;
+  width: 12rem;
+  font-size: 1rem;
+  border-radius: 0 10rem 10rem 0;
+  background-color: var(--color-brand);
+  color: var(--color-background);
+  opacity: .8;
+  outline: none;
+  box-shadow: 2px 2px 4px var(--color-cancelbutton);
+  border: 1px inset var(--color-border);
+}
+
+.button-input:hover {
+  opacity: 1;
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+<div class="tag-box" *ngIf="tags" [style.justifyContent]="justifyContent">
+
+  <a class="tag-link" href="#" *ngFor="let tag of tags; let i=index"
+     (click)="setTag(i,$event)" [ngClass]="{'active':i==tagIndex}">{{tag.name}}({{tag.count}})</a>
+
+</div>
+

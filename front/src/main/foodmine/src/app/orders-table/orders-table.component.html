@@ -1,0 +1,136 @@
+<div class="box">
+
+  <caption class="caption-table">All orders</caption>
+
+  <mat-table class="table" mat-table [dataSource]="dataSource" matSort
+         (matSortChange)="announceSortChange($event)">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell mat-header-cell class="custom-header"
+                       *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+        Id
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
+        {{element.id}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+          sortActionDescription="Sort by fullName">
+        UserName:
+        <br>
+        Full name
+      </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let element" class="multiline-cell">
+        <div class="username">{{element.username}}:</div>
+
+        <div class="fullName">{{element.fullName}}</div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="itemsFood">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+          sortActionDescription="Sort by itemsFood">
+        Items Food
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
+        <a *ngIf="element.status == 'PENDING_EXECUTION'" class="link"
+           (click)="goToCartPage(element.id)">{{element.itemsFood}}
+        </a>
+        <p *ngIf="element.status != 'PENDING_EXECUTION'">{{element.itemsFood}}
+        </p>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="totalPrice">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+          sortActionDescription="Sort by totalPrice">
+        Total price, $
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell"
+                *matCellDef="let element"> {{element.totalPrice}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="deliveryAddress">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+          sortActionDescription="Sort by deliveryAddress">
+        Delivery Address
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell"
+                *matCellDef="let element"> {{element.deliveryAddress}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phoneNumber">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+          sortActionDescription="Sort by phoneNumber">
+        Phone Number
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell"
+                *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell mat-header-cell class="custom-header"
+                       *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status">
+        Status
+      </mat-header-cell>
+
+      <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
+        <select class="custom-select" [(ngModel)]="element.status" #statusSelect
+                (change)="changeStatus(element, statusSelect.value)">
+          <option *ngFor="let item of allStatuses">{{item}}</option>
+        </select>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="orderDate">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+          sortActionDescription="Sort by orderDate">
+        Order Date
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
+        {{element.orderDate|date: 'dd/MM/yyyy  T HH:mm'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="managerName">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+          sortActionDescription="Sort by managerName">
+        Manager Name:
+        <br>
+        Status changed to
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell"
+                *matCellDef="let element"> {{element.managerName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="timeByManager">
+      <mat-header-cell mat-header-cell class="custom-header"
+                       *matHeaderCellDef mat-sort-header sortActionDescription="Sort by date">
+        Processing time by manager
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
+        {{element.changeStatusDate|date: 'dd/MM/yyyy  T HH:mm'}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="timeOfCompleted">
+      <mat-header-cell mat-header-cell class="custom-header"
+                       *matHeaderCellDef mat-sort-header sortActionDescription="Sort by date">
+        Time of completed order
+      </mat-header-cell>
+      <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
+        {{element.dateOfCompleted|date: 'dd/MM/yyyy  T HH:mm'}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

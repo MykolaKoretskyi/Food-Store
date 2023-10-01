@@ -1,0 +1,25 @@
+<header>
+  <div class="container">
+    <button class="food-mine-button" (click)="goToFoodMine()">Food Store</button>
+    <nav>
+      <ul>
+        <li>
+          <button class="header-button" *ngIf="!isLoggedIn" (click)="logInDialog()">Log In</button>
+          <button class="header-button" *ngIf="!isLoggedIn" (click)="registerDialog()">Register
+          </button>
+          <button class="header-button" *ngIf="isLoggedIn && isManager && !managerPageIsOpen"
+                  (click)="goToManagerPage()">
+            Manager Page
+          </button>
+          <button class="header-button" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+          <button class="header-img-button" *ngIf="isLoggedIn && !isManager && !whetherCartPageIsOpen()"
+                  (click)="goToCartPage()">
+            <img class="img-button" src="/assets/images/icons/1.png" alt="Cart Page">
+          </button>
+
+          <button class="header-button" (click)="infoDialog()">Info</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
