@@ -19,17 +19,18 @@ public class ImageService {
 
   private ImageRepository imageRepository;
   private FoodRepository foodRepository;
+  private StorageS3Bucket fileStorage;
 
   @Transactional
   public ImgUrlDto addFoodImage(MultipartFile file) {
 
     ImageNameAndUrl imageNameAndUrl = new ImageNameAndUrl();
-    StorageS3Bucket fileStorage = new StorageS3Bucket();
     String imageUrl = fileStorage.uploadFileToS3(file, imageNameAndUrl);
     imageNameAndUrl.setUrl(imageUrl);
     imageRepository.save(imageNameAndUrl);
     return new ImgUrlDto(null, imageUrl, file.getName());
   }
+
 
   public void deleteImage(Food food) {
 
@@ -38,7 +39,6 @@ public class ImageService {
 
     if (optionalFoodNameImageUrl.isPresent()) {
       ImageNameAndUrl imageNameAndUrl = optionalFoodNameImageUrl.get();
-      StorageS3Bucket fileStorage = new StorageS3Bucket();
       fileStorage.deleteFile(imageNameAndUrl.getImageName());
 
       food.setImageUrl(imageRepository.findById(1L).orElseThrow());
@@ -51,7 +51,6 @@ public class ImageService {
     ImageNameAndUrl imageNameAndUrl = foodRepository
         .findById(Long.parseLong(foodId)).orElseThrow().getImageUrl();
 
-    StorageS3Bucket fileStorage = new StorageS3Bucket();
     fileStorage.deleteFile(imageNameAndUrl.getImageName());
     String imageUrl = fileStorage.uploadFileToS3(file, imageNameAndUrl);
     imageNameAndUrl.setUrl(imageUrl);

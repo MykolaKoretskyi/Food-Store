@@ -29,6 +29,7 @@ export class ChangeFoodComponent {
   file: any;
   fileName: string = "";
   private oldFileName: string = "";
+  maxSizeFileInBytes: number = 1048575;
 
   constructor(
     private foodService: FoodService,
@@ -160,6 +161,9 @@ export class ChangeFoodComponent {
       }
     if (this.fileName.includes("_")) {
       message += 'The name of the image must not contain the symbol "_".\n\n';
+    }
+    if (this.file.size >= this.maxSizeFileInBytes) {
+      message += 'File size must be less than '+ this.maxSizeFileInBytes +' bytes.\n\n';
     }
       if(message != ""){
         this.exceptionService.noValidValue("35rem", message);
