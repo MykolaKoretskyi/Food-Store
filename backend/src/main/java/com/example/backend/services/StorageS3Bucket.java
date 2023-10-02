@@ -14,7 +14,6 @@ import java.io.IOException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,19 +24,14 @@ import org.springframework.web.multipart.MultipartFile;
 public class StorageS3Bucket {
 
 
-//  @Value("${s3.access.key}")
-//  private String ACCESS_KEY;
-//
-//  @Value("${s3.secret.key}")
-//  private String SECRET_KEY;
-//
-//  @Value("${s3.bucket.name}")
-//  private String BUCKET_NAME;
+  @Value("${s3.access.key}")
+  private String ACCESS_KEY;
 
+  @Value("${s3.secret.key}")
+  private String SECRET_KEY;
 
-  private String ACCESS_KEY = System.getenv("S3_ACCESS_KEY");
-  private String SECRET_KEY = System.getenv("S3_SECRET_KEY");
-  private String BUCKET_NAME = System.getenv("S3_BUCKET_NAME");
+  @Value("${s3.bucket.name}")
+  private String BUCKET_NAME;
 
 
   public String uploadFileToS3(MultipartFile file, ImageNameAndUrl imageNameAndUrl) {
