@@ -136,7 +136,7 @@ export class AddFoodComponent implements OnInit {
     if (this.fileName.includes("_")) {
       message += 'The name of the image must not contain the symbol "_".\n\n';
     }
-    if (this.file.size >= this.maxSizeFileInBytes) {
+    if (this.file != undefined && this.file.size >= this.maxSizeFileInBytes) {
       message += 'File size must be less than '+ this.maxSizeFileInBytes +' bytes.\n\n';
     }
 
