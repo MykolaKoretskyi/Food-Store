@@ -141,7 +141,7 @@ export class AddFoodComponent implements OnInit {
     }
 
     if(message != ""){
-      this.exceptionService.noValidValue("35rem", message);
+      this.exceptionService.noValidValue("37rem", message);
       return true;
     }
     return false;

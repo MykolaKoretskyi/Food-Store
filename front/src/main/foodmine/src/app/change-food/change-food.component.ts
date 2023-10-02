@@ -166,7 +166,7 @@ export class ChangeFoodComponent {
       message += 'File size must be less than '+ this.maxSizeFileInBytes +' bytes.\n\n';
     }
       if(message != ""){
-        this.exceptionService.noValidValue("35rem", message);
+        this.exceptionService.noValidValue("37rem", message);
         return true;
       }
       return false;
