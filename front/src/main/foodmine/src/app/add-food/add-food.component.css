@@ -23,11 +23,6 @@
     width: 96vw;
   }
   .checkout .checkbox-container {
-    /*display: inline-flex;*/
-    /*list-style-type: none;*/
-    /*align-items: flex-start;*/
-    /*border: 1px inset  var(--color-border);*/
-    /*border-radius: 0.5rem;*/
     width: 90vw;
     padding: 1%;
     margin-left: 1%;
@@ -65,7 +60,7 @@
   display: inline-block;
   margin: 1rem;
   padding: 1rem;
-  width: 53vw;
+  width: 60rem;
   border: 1px inset var(--color-border);
   border-radius: 1rem;
   background-image: url('/assets/images/bacground/bacground3.jpg');
@@ -95,23 +90,6 @@
   color: var(--color-cancelbutton);
 }
 
-/*.total-price{*/
-/*  font-weight: 600;*/
-/*}*/
-
-/*.total-price::before{*/
-/*  content: 'Total price: ';*/
-/*  color: grey;*/
-/*}*/
-
-/*.link {*/
-/*  color: blue;*/
-/*}*/
-
-/*.link:hover {*/
-/*  text-decoration: underline;*/
-/*  cursor: pointer;*/
-/*}*/
 
 .order-button {
   border-radius: 2rem;
@@ -166,7 +144,7 @@
   list-style-type: none;
   border: 1px inset  var(--color-border);
   border-radius: 0.5rem;
-  width: 57rem;
+  width: 55rem;
   padding: 1%;
   margin-left: 1rem;
   margin-bottom: 1rem;
