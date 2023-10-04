@@ -1,5 +1,4 @@
    <h1>Food Store</h1>
----
 
 
 <h2>Program description</h2>
@@ -10,7 +9,6 @@ by name in English.</p>
 
    <p>You can test this application by following the link:
 http://demospring.eu-central-1.elasticbeanstalk.com/</p>
----
 
 
 <h2>Technologies Used</h2>
