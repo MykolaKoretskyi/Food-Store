@@ -1,29 +1,31 @@
-   #Food Store
+   <h1>Food Store</h1>
 ---
 
 
-##Program description
+<h2>Program description</h2>
 
-   The program is a demonstration version of an online food ordering store. 
+   <p>The program is a demonstration version of an online food ordering store. 
 Please note that the interface language is English, the search is carried out 
-by name in English.
+by name in English.</p>
 
-You can test this application by following the link:
-http://demospring.eu-central-1.elasticbeanstalk.com/
+   <p>You can test this application by following the link:
+http://demospring.eu-central-1.elasticbeanstalk.com/</p>
 ---
 
 
-##Technologies Used
-*Angular 16
-*Java 17
-*Maven
-*Spring 3.0.6
-*Spring Data
-*Hibernate
-*Spring MVC (REST)
-*Spring Security JWT
-*PostgreSQL
-*Lombok
-*Amazon RDS
-*Amazon S3
-*AWS Elastic Beanstalk
+<h2>Technologies Used</h2>
+<ul>
+<li>Angular 16</li>
+<li>Java 17</li>
+<li>Maven</li>
+<li>Spring 3.0.6</li>
+<li>Spring Data</li>
+<li>Hibernate</li>
+<li>Spring MVC (REST)</li>
+<li>Spring Security JWT</li>
+<li>PostgreSQL</li>
+<li>Lombok</li>
+<li>Amazon RDS</li>
+<li>Amazon S3</li>
+<li>AWS Elastic Beanstalk</li>
+</ul>
