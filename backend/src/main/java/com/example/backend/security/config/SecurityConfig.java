@@ -24,7 +24,7 @@ public class SecurityConfig {
   private final JwtAuthenticationFilter jwtAuthFilter;
   private final AuthenticationProvider authenticationProvider;
 
-  //  @Value("http://localhost:4200")
+
   @Value("*")
   private String clientURL;
 

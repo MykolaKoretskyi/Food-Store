@@ -2,7 +2,6 @@ package com.example.backend.user;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,10 +38,6 @@ public class Role {
   @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
   private Set<User> users;
 
-//  public Role(RoleEnum name, Set<User> users) {
-//    this.name = name;
-//    this.users = users;
-//  }
 
   @Override
   public String toString() {

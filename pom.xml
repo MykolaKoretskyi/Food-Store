@@ -28,7 +28,6 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <java.version>17</java.version>
-<!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
   </properties>
 
   <dependencyManagement>
@@ -68,28 +67,28 @@
           <target>17</target>
         </configuration>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-checkstyle-plugin</artifactId>-->
-<!--        <version>3.1.0</version>-->
-<!--        <configuration>-->
-<!--          <configLocation>google_checks.xml</configLocation>-->
-<!--          <consoleOutput>true</consoleOutput>-->
-<!--          <failsOnError>true</failsOnError>-->
-<!--          <failOnViolation>true</failOnViolation>-->
-<!--          <violationSeverity>warning</violationSeverity>-->
-<!--          <includeTestSourceDirectory>true</includeTestSourceDirectory>-->
-<!--        </configuration>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <id>package</id>-->
-<!--            <phase>package</phase>-->
-<!--            <goals>-->
-<!--              <goal>check</goal>-->
-<!--            </goals>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--      </plugin>-->
+      <!--      <plugin>-->
+      <!--        <groupId>org.apache.maven.plugins</groupId>-->
+      <!--        <artifactId>maven-checkstyle-plugin</artifactId>-->
+      <!--        <version>3.1.0</version>-->
+      <!--        <configuration>-->
+      <!--          <configLocation>google_checks.xml</configLocation>-->
+      <!--          <consoleOutput>true</consoleOutput>-->
+      <!--          <failsOnError>true</failsOnError>-->
+      <!--          <failOnViolation>true</failOnViolation>-->
+      <!--          <violationSeverity>warning</violationSeverity>-->
+      <!--          <includeTestSourceDirectory>true</includeTestSourceDirectory>-->
+      <!--        </configuration>-->
+      <!--        <executions>-->
+      <!--          <execution>-->
+      <!--            <id>package</id>-->
+      <!--            <phase>package</phase>-->
+      <!--            <goals>-->
+      <!--              <goal>check</goal>-->
+      <!--            </goals>-->
+      <!--          </execution>-->
+      <!--        </executions>-->
+      <!--      </plugin>-->
     </plugins>
   </build>
 

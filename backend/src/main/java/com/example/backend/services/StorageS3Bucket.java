@@ -66,6 +66,7 @@ public class StorageS3Bucket {
     }
   }
 
+
   private String generateUniqueKey(String originalFilename) {
     long timestamp = System.currentTimeMillis();
     return "images/" + timestamp + "_" + originalFilename;
