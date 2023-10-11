@@ -68,6 +68,7 @@ public class FoodService {
     return foodRepository.save(food);
   }
 
+
   public List<TagCountDto> findAllTags() {
 
     List<TagCountDto> listTagCount = new ArrayList<>();
@@ -86,6 +87,7 @@ public class FoodService {
     return listTagCount;
   }
 
+
   public List<String> findAllOrigins() {
 
     List<String> listOrigins = new ArrayList<>();
@@ -94,6 +96,7 @@ public class FoodService {
     }
     return listOrigins;
   }
+
 
   public Page<Food> getAllFoods(
       Specification<Food> specification,
@@ -115,10 +118,12 @@ public class FoodService {
     return foodRepository.findAll(specification, pageable);
   }
 
+
   public static Specification<Food> excludeFoodWithId(long idToExclude) {
     return (root, query, criteriaBuilder) ->
         criteriaBuilder.notEqual(root.get("id"), idToExclude);
   }
+
 
   public static Specification<Food> executeForSearch(String searchTerm) {
     return (root, query, criteriaBuilder) ->
@@ -126,6 +131,7 @@ public class FoodService {
             criteriaBuilder.like(criteriaBuilder.lower(root.get("name")),
                 "%" + searchTerm.toLowerCase() + "%"));
   }
+
 
   public static Specification<Food> executeForTag(String tagName) {
     return (root, query, criteriaBuilder) -> {
@@ -136,6 +142,7 @@ public class FoodService {
       );
     };
   }
+
 
   public List<Food> getFoodsByListId(List<String> listId) {
 
@@ -148,6 +155,7 @@ public class FoodService {
     }
     return listFood;
   }
+
 
   public Food changeFoodById(Long id, FoodRequestDto foodRequestDto) {
 
@@ -168,6 +176,7 @@ public class FoodService {
     return food;
   }
 
+
   private Set<Tag> transformToTags(Set<String> tagsNames, Food food) {
     Set<Tag> tags = new HashSet<>();
 
@@ -179,6 +188,7 @@ public class FoodService {
     return tags;
   }
 
+
   private Set<Origin> transformToOrigins(Set<String> originsNames, Food food) {
     Set<Origin> origins = new HashSet<>();
     originsNames.stream().forEach(originNames -> {
@@ -189,6 +199,7 @@ public class FoodService {
     });
     return origins;
   }
+
 
   public Food changeAndGetStatusFavorite(
       FoodRequestDto foodRequestDto,
@@ -245,6 +256,7 @@ public class FoodService {
     return food;
   }
 
+
   public IdNameDto deleteFoodById(Long id) {
 
     Food food = foodRepository.findById(id).orElseThrow();
@@ -263,6 +275,7 @@ public class FoodService {
     return new IdNameDto(food.getId(), food.getName());
   }
 
+
   public Page<Food> getAllFoodsExceptDeleted(
       Long ignoreId,
       String searchTerm,
@@ -271,6 +284,7 @@ public class FoodService {
   ) {
     return getAllFoods(executeIsNotDeleted(), ignoreId, searchTerm, tagName, pageable);
   }
+
 
   public static Specification<Food> executeIsNotDeleted() {
     return (root, query, criteriaBuilder) ->

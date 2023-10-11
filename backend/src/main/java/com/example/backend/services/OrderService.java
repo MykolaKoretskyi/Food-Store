@@ -51,10 +51,10 @@ public class OrderService {
     if (orderDto.getStatus() != null) {
       order.setStatus(orderDto.getStatus());
     }
-
     orderRepository.flush();
     return order;
   }
+
 
   public Order changeOrderStatus(Long id, OrderDto orderDto) {
 
@@ -104,6 +104,7 @@ public class OrderService {
     );
   }
 
+
   private Set<ItemsFood> transformItemsAndSave(Set<ItemsFoodDto> itemsFoodDto) {
 
     Set<ItemsFood> itemsFood = new HashSet<>();
@@ -119,9 +120,11 @@ public class OrderService {
     return itemsFood;
   }
 
+
   public List<Order> getAllOrders() {
     return orderRepository.findAll();
   }
+
 
   public List<Order> getOrdersForUser(HttpServletRequest request) {
     String username = request.getUserPrincipal().getName();

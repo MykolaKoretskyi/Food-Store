@@ -1,24 +1,24 @@
--- INSERT INTO origins
--- VALUES (DEFAULT, 'ITALY'),
---        (DEFAULT, 'PERSIA'),
---        (DEFAULT, 'MIDDLE_EAST'),
---        (DEFAULT, 'CHINA'),
---        (DEFAULT, 'GERMANY'),
---        (DEFAULT, 'US'),
---        (DEFAULT, 'BELGIUM'),
---        (DEFAULT, 'FRANCE'),
---        (DEFAULT, 'INDIA'),
---        (DEFAULT, 'ASIA');
---
--- INSERT INTO tags
--- VALUES (DEFAULT, 'FAST_FOOD'),
---        (DEFAULT, 'PIZZA'),
---        (DEFAULT, 'LUNCH'),
---        (DEFAULT, 'SLOW_FOOD'),
---        (DEFAULT, 'HAMBURGER'),
---        (DEFAULT, 'FRY'),
---        (DEFAULT, 'SOUP'),
---        (DEFAULT, 'DESSERT');
+INSERT INTO origins
+VALUES (DEFAULT, 'ITALY'),
+       (DEFAULT, 'PERSIA'),
+       (DEFAULT, 'MIDDLE_EAST'),
+       (DEFAULT, 'CHINA'),
+       (DEFAULT, 'GERMANY'),
+       (DEFAULT, 'US'),
+       (DEFAULT, 'BELGIUM'),
+       (DEFAULT, 'FRANCE'),
+       (DEFAULT, 'INDIA'),
+       (DEFAULT, 'ASIA');
+
+INSERT INTO tags
+VALUES (DEFAULT, 'FAST_FOOD'),
+       (DEFAULT, 'PIZZA'),
+       (DEFAULT, 'LUNCH'),
+       (DEFAULT, 'SLOW_FOOD'),
+       (DEFAULT, 'HAMBURGER'),
+       (DEFAULT, 'FRY'),
+       (DEFAULT, 'SOUP'),
+       (DEFAULT, 'DESSERT');
 
 INSERT INTO url_images
 VALUES (DEFAULT, '0_food-0.jpg', '/assets/images/foods/0_food-0.jpg'),
@@ -102,25 +102,25 @@ VALUES (1, 1),
        (12, 3),
        (12, 4);
 
--- INSERT INTO roles
--- VALUES (DEFAULT, 'ADMIN'),
---        (DEFAULT, 'USER'),
---        (DEFAULT, 'MANAGER');
+INSERT INTO roles
+VALUES (DEFAULT, 'ADMIN'),
+       (DEFAULT, 'USER'),
+       (DEFAULT, 'MANAGER');
 
--- INSERT INTO users
--- VALUES (DEFAULT, 'testUser2', 'useremail2@gmail.com',
---         '$2a$12$jT.nKuZmve3EWeKLlmuLYeNFCNh9ezb7zSXYSjKrHTwilPSKu.1LS',
---         true, true, true, true),
---        (DEFAULT, 'testUser1', 'useremail1@gmail.com',
---         '$2a$12$jT.nKuZmve3EWeKLlmuLYeNFCNh9ezb7zSXYSjKrHTwilPSKu.1LS',
---         true, true, true, true),
---        (DEFAULT, 'testUser3', 'useremail3@gmail.com',
---         '$2a$12$jT.nKuZmve3EWeKLlmuLYeNFCNh9ezb7zSXYSjKrHTwilPSKu.1LS',
---         true, true, true, true);
---
+INSERT INTO users
+VALUES (DEFAULT, 'testUser2', 'useremail2@gmail.com',
+        '$2a$12$jT.nKuZmve3EWeKLlmuLYeNFCNh9ezb7zSXYSjKrHTwilPSKu.1LS',
+        true, true, true, true),
+       (DEFAULT, 'testUser1', 'useremail1@gmail.com',
+        '$2a$12$jT.nKuZmve3EWeKLlmuLYeNFCNh9ezb7zSXYSjKrHTwilPSKu.1LS',
+        true, true, true, true),
+       (DEFAULT, 'testUser3', 'useremail3@gmail.com',
+        '$2a$12$jT.nKuZmve3EWeKLlmuLYeNFCNh9ezb7zSXYSjKrHTwilPSKu.1LS',
+        true, true, true, true);
 
--- -- INSERT INTO users_roles
--- -- VALUES (1, 1),
--- --        (1, 2),
--- --        (2, 2),
--- --        (3, 2);
+
+INSERT INTO users_roles
+VALUES (1, 1),
+       (1, 2),
+       (2, 2),
+       (3, 2);

@@ -43,11 +43,4 @@ public class AuthenticationController {
     authService.logout(request);
   }
 
-//  @GetMapping("/check")
-//  public ResponseEntity<ExistsRegisterDataDto> checkUsernameAndEmail(
-//      @RequestParam(value = "username", required = false) String username,
-//      @RequestParam(value = "email", required = false) String email) {
-//    return ResponseEntity.ok(authService.isExistUsernameAndEmail(username, email));
-//  }
-
 }
