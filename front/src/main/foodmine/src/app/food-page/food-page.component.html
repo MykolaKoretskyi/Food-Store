@@ -1,7 +1,5 @@
 <app-not-found [visible]="!food && !isStatusForbidden" notFoundMessage="Product Not Found!"
                resetLinkText="Go To Homepage"></app-not-found>
-<app-not-found [visible]="isStatusForbidden" notFoundMessage="You are not authorized"
-               resetLinkText="Go To Home Page"></app-not-found>
 
 <div class="box">
   <div *ngIf="food" class="cont">
@@ -14,7 +12,7 @@
       <div class="header">
         <span class="name">{{food.name}}</span>
         <span class="favorite">
-        <a *ngIf="!isManager" class="favorite-link {{food.favorite?'':'not'}}"
+        <a *ngIf="!isManager && !isStatusForbidden" class="favorite-link {{food.favorite?'':'not'}}"
            (click)="changeFavoriteStatus()">
           ❤
         </a>
