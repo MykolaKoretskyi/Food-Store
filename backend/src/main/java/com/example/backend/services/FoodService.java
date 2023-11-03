@@ -180,7 +180,7 @@ public class FoodService {
   private Set<Tag> transformToTags(Set<String> tagsNames, Food food) {
     Set<Tag> tags = new HashSet<>();
 
-    tagsNames.stream().forEach(tagNames -> {
+    tagsNames.forEach(tagNames -> {
       Tag tag = tagRepository.findTagByName(TagEnumerated.valueOf(tagNames)).orElseThrow();
       tag.getFood().add(food);
       tags.add(tag);
@@ -191,7 +191,7 @@ public class FoodService {
 
   private Set<Origin> transformToOrigins(Set<String> originsNames, Food food) {
     Set<Origin> origins = new HashSet<>();
-    originsNames.stream().forEach(originNames -> {
+    originsNames.forEach(originNames -> {
       Origin origin = originRepository.findOriginByName(
           OriginEnumerated.valueOf(originNames)).orElseThrow();
       origin.getFood().add(food);
@@ -235,18 +235,22 @@ public class FoodService {
 
   public Food getFoodById(Long id, HttpServletRequest request) {
 
-    User user = userRepository.findByUsername(request.getUserPrincipal().getName()).orElseThrow();
+    User user = null;
+    if(request.getUserPrincipal() != null){
+      user = userRepository.findByUsername(request.getUserPrincipal().getName()).orElseThrow();
+    }
     Food food = foodRepository.findById(id).orElseThrow(() ->
         new RequestException(HttpStatus.NOT_FOUND, "Object with id: " + id + " not found"));
-    food.setFavorite(food.getUsers().contains(user));
+    if(user != null){
+      food.setFavorite(food.getUsers().contains(user));
+    }
     return food;
-
   }
+
 
   public Food getFoodIdByName(IdNameDto idNameDto) {
 
     Optional<Food> optionalFood = foodRepository.findByName(idNameDto.getName());
-
     Food food = new Food();
     if (optionalFood.isPresent()) {
       food = optionalFood.get();

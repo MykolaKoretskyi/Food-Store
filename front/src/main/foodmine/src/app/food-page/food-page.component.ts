@@ -45,7 +45,6 @@ export class FoodPageComponent implements OnInit {
       {
         next: (response => {
           this.food = response;
-          this.isStatusForbidden = false;
         }),
         error: (error => {
           if (error.status == 401) {
