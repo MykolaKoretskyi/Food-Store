@@ -27,3 +27,9 @@ http://demospring.eu-central-1.elasticbeanstalk.com/</p>
 <li>Amazon S3</li>
 <li>AWS Elastic Beanstalk</li>
 </ul>
+
+<h2>Screenshots</h2>
+
+![screenshot](./assets/screenshot-4.jpg) 
+![screenshot](./assets/screenshot-5.jpg) 
+![screenshot](./assets/screenshot-11.jpg) 
