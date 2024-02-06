@@ -30,7 +30,6 @@ import lombok.Setter;
 @Table(name = "foods")
 public class Food {
 
-
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
