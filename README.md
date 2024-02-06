@@ -30,6 +30,14 @@ http://demospring.eu-central-1.elasticbeanstalk.com/</p>
 
 <h2>Screenshots</h2>
 
+<p>Database Diagram</p>
+
 ![screenshot](./assets/screenshot-4.jpg) 
+
+<p>Some Entities</p>
+
 ![screenshot](./assets/screenshot-5.jpg) 
+
+<p>Testing JWT authorization by Postman</p>
+
 ![screenshot](./assets/screenshot-11.jpg) 
