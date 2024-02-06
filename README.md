@@ -30,14 +30,35 @@ http://demospring.eu-central-1.elasticbeanstalk.com/</p>
 
 <h2>Screenshots</h2>
 
+<p>Main page</p>
+
+![Main page](./assets/screenshot-1.jpg)
+
+<p>Filtering by tag</p>
+
+![Filtering by tag](./assets/screenshot-2.jpg)
+
+<p>Search by keyword in the title</p>
+
+![Search by keyword](./assets/screenshot-3.jpg)
+
+<p>Food page for a non-logged user</p>
+
+![Food page](./assets/screenshot-6.jpg)
+
+<p>Food page for logged in users</p>
+
+![Food page](./assets/screenshot-7.jpg)
+
 <p>Database Diagram</p>
 
-![screenshot](./assets/screenshot-4.jpg) 
+![Diagram](./assets/screenshot-4.jpg) 
 
 <p>Some Entities</p>
 
-![screenshot](./assets/screenshot-5.jpg) 
+![Entities](./assets/screenshot-5.jpg) 
 
-<p>Testing JWT authorization by Postman</p>
+<p>Testing JWT authentication by Postman</p>
 
-![screenshot](./assets/screenshot-11.jpg) 
+![Authentication](./assets/screenshot-11.jpg) 
+
