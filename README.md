@@ -30,47 +30,47 @@ http://demospring.eu-central-1.elasticbeanstalk.com/</p>
 
 <h2>Screenshots</h2>
 
-<p>Main page</p>
+<h3>Main page</h3>
 
 ![Main page](./assets/screenshot-1.jpg)
 
-<p>Filtering foods by tag</p>
+<h3>Filtering foods by tag</h3>
 
 ![Filtering by tag](./assets/screenshot-2.jpg)
 
-<p>Search foods by keyword in the title</p>
+<h3>Search foods by keyword in the title</h3>
 
 ![Search by keyword](./assets/screenshot-3.jpg)
 
-<p>Food page for a non-logged user</p>
+<h3>Food page for a non-logged user</h3>
 
 ![Food page](./assets/screenshot-4.jpg)
 
-<p>Food page for logged in users</p>
+<h3>Food page for logged in users</h3>
 
 ![Food page](./assets/screenshot-5.jpg)
 
-<p>Food ordering page</p>
+<h3>Food ordering page</h3>
 
 ![Food ordering page](./assets/screenshot-6.jpg)
 
-<p>Manager page</p>
+<h3>Manager page</h3>
 
 ![Manager page](./assets/screenshot-7.jpg)
 
-<p>Page for adding a new food item</p>
+<h3>Page for adding a new food item</h3>
 
 ![Add new food](./assets/screenshot-8.jpg)
 
-<p>Database Diagram</p>
+<h3>Database Diagram</h3>
 
 ![Diagram](./assets/screenshot-9.jpg) 
 
-<p>Some Entities</p>
+<h3>Some Entities</h3>
 
 ![Entities](./assets/screenshot-10.jpg) 
 
-<p>Testing JWT authentication by Postman</p>
+<h3>Testing JWT authentication by Postman</h3>
 
 ![Authentication](./assets/screenshot-11.jpg) 
 
