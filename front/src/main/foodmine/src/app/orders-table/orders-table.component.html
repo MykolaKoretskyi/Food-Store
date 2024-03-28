@@ -5,11 +5,11 @@
   <mat-table class="table" mat-table [dataSource]="dataSource" matSort
          (matSortChange)="announceSortChange($event)">
 
-    <!-- Position Column -->
     <ng-container matColumnDef="id">
-      <mat-header-cell mat-header-cell class="custom-header"
-                       *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      <mat-header-cell mat-header-cell class="custom-header" *matHeaderCellDef mat-sort-header
+                       sortActionDescription="Sort by number" >
         Id
+
       </mat-header-cell>
       <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
         {{element.id}}
@@ -93,7 +93,7 @@
         Order Date
       </mat-header-cell>
       <mat-cell mat-cell class="custom-cell" *matCellDef="let element">
-        {{element.orderDate|date: 'dd/MM/yyyy  T HH:mm'}} </mat-cell>
+        {{element.orderDate|date: 'dd/MM/yyyy T HH:mm'}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="managerName">
