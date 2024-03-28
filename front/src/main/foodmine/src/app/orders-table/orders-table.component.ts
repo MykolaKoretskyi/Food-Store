@@ -49,21 +49,19 @@ export class OrdersTableComponent implements AfterViewInit {
       return;
     }
     this.getOrders();
-    // Встановлюємо початковий стан сортування для MatSort
 
-    setTimeout(() => {
-      const initialSort: Sort = { active: 'id', direction: 'asc' };
+    setTimeout((): void => {
+      const initialSort: Sort = { active: 'id', direction: 'desc' };
       this.sort.active = initialSort.active;
       this.sort.direction = initialSort.direction;
-      // Оновлення значення атрибута після закінчення перевірки Angular
-      // this.liveAnnouncer.announce(`Sorted ${this.sort.direction}ending`);
+
     });
 
   }
 
 
   /** Announce the change in sort state for assistive technology. */
-  announceSortChange(sortState: Sort) {
+  announceSortChange(sortState: Sort): void {
     // This example uses English messages. If your application supports
     // multiple language, you would internationalize these strings.
     // Furthermore, you can customize the message to add additional
@@ -131,23 +129,23 @@ export class OrdersTableComponent implements AfterViewInit {
     return ordersList;
   }
 
-  private concatItemsFood(itemsFood: CartItemFood[]) {
-    let itemsString = "";
+  private concatItemsFood(itemsFood: CartItemFood[]): string {
+    let itemsString: string = "";
     itemsFood.forEach(itemFood => {
       itemsString += itemFood.food.name + ": " + itemFood.quantity + "; ";
     });
     return itemsString.slice(0, -2);
   }
 
-  public goToCartPage(id: number) {
+  public goToCartPage(id: number): void {
     this.managerService.setManagerPageIsOpen(false);
-    let order: OrderData = this.ordersList.filter(function (e) {
+    let order: OrderData = this.ordersList.filter(function (e: OrderData): boolean {
       return e.id == id;
     })[0];
     this.cartPageStorage.removeAll();
     order.itemsFood.forEach(order => {
       this.cartPageStorage.saveSelectedFood(order.food.id.toString(), order.quantity.toString());
-      // this.cartPageStorage.changeQuantitySelectedFood(order.food.id.toString(), order.quantity.toString());
+
     });
     this.router.navigate(['/cart-page']);
   }
@@ -156,23 +154,15 @@ export class OrdersTableComponent implements AfterViewInit {
   changeStatus(orderDataForTable: OrderDataForTable, status: string): void {
 
     let order: any = this.ordersList.find(order => order.id == orderDataForTable.id);
-    // let order: OrderData = this.ordersList.filter(function (e) {
-    //   return e.id == orderDataForTable.id;
-    // })[0];
 
     let datePipe: DatePipe = new DatePipe("en-US");
     order.orderDate = new Date(datePipe.transform(order.orderDate, 'yyyy-MM-ddTHH:mm') + '').toISOString();
     order.status = this.checkAndChangeStatus(datePipe, order, status);
 
-    console.log("orderData");
-    console.log(order);
-
     if (order.status == status) {
       this.foodService.changeOrderStatus(order).subscribe(
         {
-          next: (response => {
-            console.log("2");
-            console.log(response);
+          next: ((): void => {
             this.getOrders();
           }),
           error: (error => {
@@ -191,16 +181,7 @@ export class OrdersTableComponent implements AfterViewInit {
     }
   }
 
-  private changeOrderDataInOrderList(orderData: OrderData): void {
-
-    this.orderDataForTable.forEach(order => {
-      if (order.id == orderData.id) {
-        order.status = orderData.status;
-      }
-    });
-  }
-
-  private goToFoodMine() {
+  private goToFoodMine(): void {
     this.cartPageStorage.removeAll();
     this.router.navigate(['/']);
   }
@@ -208,8 +189,6 @@ export class OrdersTableComponent implements AfterViewInit {
   private checkAndChangeStatus(datePipe: DatePipe, order: OrderData, status: string): string {
 
     let changedStatus: string;
-
-    // let availableForPendingExecution: Array<string> = ['WORK_IN_PROGRESS', 'CANCELLED', 'DONE'];
     let availableStatus: Array<string> = ['CANCELLED', 'DONE'];
 
     if (order.status == 'PENDING_EXECUTION' && status == 'WORK_IN_PROGRESS') {
@@ -224,15 +203,12 @@ export class OrdersTableComponent implements AfterViewInit {
       order.dateOfCompleted = new Date(datePipe.transform(Date.now(), 'yyyy-MM-ddTHH:mm') + '').toISOString();
 
     } else if ((order.status == 'WORK_IN_PROGRESS') && availableStatus.includes(status)) {
-
       changedStatus = status;
       order.dateOfCompleted = new Date(datePipe.transform(Date.now(), 'yyyy-MM-ddTHH:mm') + '').toISOString();
 
     } else {
-
       changedStatus = order.status;
     }
-
     return changedStatus;
   }
 

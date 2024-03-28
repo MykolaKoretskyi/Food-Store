@@ -39,8 +39,6 @@ export class FoodPageComponent implements OnInit {
 
   extractFoodById(): void {
 
-    console.log("FoodPageComponentExtractFoodById");
-
     this.foodService.getFoodById(this.idStorage.getId()).subscribe(
       {
         next: (response => {
@@ -63,8 +61,10 @@ export class FoodPageComponent implements OnInit {
 
 
   addToCart(): void {
-    this.cartService.addToCart(this.food);
-    this.cartPageService.setCartPageIsOpen(true);
+    if(!this.isStatusForbidden){
+      this.cartService.addToCart(this.food);
+      this.cartPageService.setCartPageIsOpen(true);
+    }
     this.router.navigateByUrl('/cart-page');
   }
 
