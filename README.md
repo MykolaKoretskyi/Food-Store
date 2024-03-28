@@ -30,9 +30,7 @@ http://demospring.eu-central-1.elasticbeanstalk.com/</p>
 
 <h2>Video clip</h2>
 
-<video width="320" height="240" controls>
-  <source src="./assets/clip.mp4" type="video/mp4">
-</video>
+![Video clip](./assets/clip.mp4)
 
 <h2>Screenshots</h2>
 
