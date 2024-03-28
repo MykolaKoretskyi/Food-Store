@@ -33,8 +33,8 @@ export class UserOrdersComponent {
   ngAfterViewInit(): void {
     this.getOrdersForUser();
     setTimeout(() => {
-      // Встановлюємо початковий стан сортування для MatSort
-      const initialSort: Sort = {active: 'id', direction: 'asc'};
+
+      const initialSort: Sort = {active: 'id', direction: 'desc'};
       this.sort.active = initialSort.active;
       this.sort.direction = initialSort.direction;
     });
