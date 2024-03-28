@@ -28,10 +28,6 @@ http://demospring.eu-central-1.elasticbeanstalk.com/</p>
 <li>AWS Elastic Beanstalk</li>
 </ul>
 
-<h2>Video clip</h2>
-
-![Video clip](./assets/clip.mp4)
-
 <h2>Screenshots</h2>
 
 <h3>Main page</h3>
