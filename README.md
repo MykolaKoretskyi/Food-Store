@@ -1,15 +1,9 @@
-   <h1>Food Store</h1>
+<h1>Food Store</h1>
 
 
 <h2>Program description</h2>
 
-   <p>The program is a demonstration version of an online food ordering store. 
-Please note that the interface language is English, the search is carried out 
-by name in English.</p>
-
-   <p>You can test this application by following the link:
-http://demospring.eu-central-1.elasticbeanstalk.com/</p>
-
+<p>The program is a demonstration version of an online food ordering store.</p>
 
 <h2>Technologies Used</h2>
 <ul>
